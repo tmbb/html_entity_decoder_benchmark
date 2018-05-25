@@ -9,9 +9,13 @@ defmodule HtmlDecoder.Benchmark.Main do
     BP_8,
     BP_16,
     BP_32,
+    BP_64,
     BP_16_8,
     BP_32_16,
     BP_32_16_8,
+    BP_64_16,
+    BP_64_32,
+    BP_64_32_16_8,
     # Charlist
     CL_8,
     CL_16,
@@ -45,14 +49,26 @@ defmodule HtmlDecoder.Benchmark.Main do
       "Binary Part (32)" => fn ->
         Enum.map(escaped_inputs, &BP_32.unescape_html_entities/1)
       end,
+      "Binary Part (64)" => fn ->
+        Enum.map(escaped_inputs, &BP_64.unescape_html_entities/1)
+      end,
       "Binary Part (16 + 8)" => fn ->
         Enum.map(escaped_inputs, &BP_16_8.unescape_html_entities/1)
       end,
       "Binary Part (32 + 16)" => fn ->
         Enum.map(escaped_inputs, &BP_32_16.unescape_html_entities/1)
       end,
+      "Binary Part (64 + 32)" => fn ->
+        Enum.map(escaped_inputs, &BP_64_32.unescape_html_entities/1)
+      end,
+      "Binary Part (64 + 16)" => fn ->
+        Enum.map(escaped_inputs, &BP_64_16.unescape_html_entities/1)
+      end,
       "Binary Part (32 + 16 + 8)" => fn ->
         Enum.map(escaped_inputs, &BP_32_16_8.unescape_html_entities/1)
+      end,
+      "Binary Part (64 + 32 + 16 + 8)" => fn ->
+        Enum.map(escaped_inputs, &BP_64_32_16_8.unescape_html_entities/1)
       end,
       # Charlist
       "Charlist (8)" => fn ->
