@@ -1,0 +1,1 @@
+HtmlDecoder.Benchmark.Main.run()
