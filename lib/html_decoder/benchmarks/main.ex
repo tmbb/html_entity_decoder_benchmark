@@ -11,11 +11,16 @@ defmodule HtmlDecoder.Benchmark.Main do
     BP_32,
     BP_64,
     BP_16_8,
+    BP_30_10,
     BP_32_16,
+    BP_36_12,
     BP_32_16_8,
+    BP_36_12_4,
     BP_64_16,
     BP_64_32,
     BP_64_32_16_8,
+    BP_27_9_3,
+    BP_42_14_5,
     # Charlist
     CL_8,
     CL_16,
@@ -39,7 +44,6 @@ defmodule HtmlDecoder.Benchmark.Main do
       "Simple" => fn ->
         Enum.map(escaped_inputs, &Simple.unescape_html_entities/1)
       end,
-      # Binary part
       "Binary Part (8)" => fn ->
         Enum.map(escaped_inputs, &BP_8.unescape_html_entities/1)
       end,
@@ -55,8 +59,20 @@ defmodule HtmlDecoder.Benchmark.Main do
       "Binary Part (16 + 8)" => fn ->
         Enum.map(escaped_inputs, &BP_16_8.unescape_html_entities/1)
       end,
+      "Binary Part (30 + 10)" => fn ->
+        Enum.map(escaped_inputs, &BP_30_10.unescape_html_entities/1)
+      end,
       "Binary Part (32 + 16)" => fn ->
         Enum.map(escaped_inputs, &BP_32_16.unescape_html_entities/1)
+      end,
+      "Binary Part (36 + 12)" => fn ->
+        Enum.map(escaped_inputs, &BP_36_12.unescape_html_entities/1)
+      end,
+      "Binary Part (27 + 9 + 3)" => fn ->
+        Enum.map(escaped_inputs, &BP_27_9_3.unescape_html_entities/1)
+      end,
+      "Binary Part (42 + 14 + 5)" => fn ->
+        Enum.map(escaped_inputs, &BP_42_14_5.unescape_html_entities/1)
       end,
       "Binary Part (64 + 32)" => fn ->
         Enum.map(escaped_inputs, &BP_64_32.unescape_html_entities/1)
@@ -66,6 +82,9 @@ defmodule HtmlDecoder.Benchmark.Main do
       end,
       "Binary Part (32 + 16 + 8)" => fn ->
         Enum.map(escaped_inputs, &BP_32_16_8.unescape_html_entities/1)
+      end,
+      "Binary Part (36 + 12 + 4)" => fn ->
+        Enum.map(escaped_inputs, &BP_36_12_4.unescape_html_entities/1)
       end,
       "Binary Part (64 + 32 + 16 + 8)" => fn ->
         Enum.map(escaped_inputs, &BP_64_32_16_8.unescape_html_entities/1)

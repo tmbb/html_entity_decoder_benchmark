@@ -30,14 +30,19 @@ time: 5 s
 memory time: 0 μs
 parallel: 1
 inputs: none specified
-Estimated total run time: 2.10 min
+Estimated total run time: 2.68 min
 
 
 Benchmarking Binary Part (16 + 8)...
 Benchmarking Binary Part (16)...
+Benchmarking Binary Part (27 + 9 + 3)...
+Benchmarking Binary Part (30 + 10)...
 Benchmarking Binary Part (32 + 16 + 8)...
 Benchmarking Binary Part (32 + 16)...
 Benchmarking Binary Part (32)...
+Benchmarking Binary Part (36 + 12 + 4)...
+Benchmarking Binary Part (36 + 12)...
+Benchmarking Binary Part (42 + 14 + 5)...
 Benchmarking Binary Part (64 + 16)...
 Benchmarking Binary Part (64 + 32 + 16 + 8)...
 Benchmarking Binary Part (64 + 32)...
@@ -53,44 +58,54 @@ Benchmarking Simple...
 Benchmarking String Replace...
 
 Name                                     ips        average  deviation         median         99th %
-Binary Part (32 + 16)                14.11 K       70.86 μs    ±11.03%          78 μs          79 μs
-Binary Part (32)                     13.84 K       72.26 μs   ±107.97%           0 μs         160 μs
-Binary Part (16)                     13.59 K       73.59 μs    ±10.49%          78 μs          94 μs
-Binary Part (32 + 16 + 8)            13.19 K       75.81 μs    ±11.34%          78 μs         110 μs
-Binary Part (16 + 8)                 12.52 K       79.86 μs    ±11.82%          78 μs         110 μs
-Binary Part (64 + 16)                11.92 K       83.87 μs     ±9.19%          78 μs          94 μs
-Charlist (16)                        11.52 K       86.78 μs    ±89.65%         150 μs         160 μs
-Binary Part (64 + 32)                11.49 K          87 μs     ±9.05%          93 μs          94 μs
-Binary Part (64 + 32 + 16 + 8)       11.36 K          88 μs     ±8.64%          93 μs          94 μs
-Charlist (16 + 8)                    11.31 K       88.45 μs    ±87.72%         150 μs         160 μs
-Binary Part (8)                      11.11 K       90.05 μs    ±85.92%         150 μs         160 μs
-Charlist (32 + 16)                   11.03 K       90.64 μs   ±403.23%           0 μs        1600 μs
-Charlist (32)                        10.89 K       91.87 μs    ±83.90%         150 μs         160 μs
-Simple                               10.70 K       93.45 μs     ±5.19%          94 μs         110 μs
-Charlist (8)                         10.60 K       94.33 μs     ±6.29%          94 μs         110 μs
-Charlist (32 + 16 + 8)               10.47 K       95.51 μs     ±5.37%          94 μs         110 μs
-Binary Part (64)                      9.29 K      107.64 μs    ±67.39%         150 μs         160 μs
-String Replace                        3.02 K      331.19 μs    ±15.22%         310 μs         470 μs
+Binary Part (36 + 12)                15.21 K       65.75 μs     ±9.73%          63 μs          79 μs
+Binary Part (30 + 10)                14.42 K       69.34 μs    ±11.41%          63 μs          79 μs
+Binary Part (36 + 12 + 4)            14.29 K       69.97 μs   ±462.08%           0 μs        1600 μs
+Binary Part (32 + 16)                14.16 K       70.65 μs    ±11.07%          78 μs          79 μs
+Binary Part (42 + 14 + 5)            14.02 K       71.31 μs    ±10.83%          78 μs          79 μs
+Binary Part (32)                     13.91 K       71.87 μs    ±10.70%          78 μs          79 μs
+Binary Part (27 + 9 + 3)             13.67 K       73.15 μs    ±10.09%          78 μs          79 μs
+Binary Part (16)                     13.63 K       73.38 μs    ±10.00%          78 μs          79 μs
+Binary Part (32 + 16 + 8)            13.59 K       73.59 μs     ±9.67%          78 μs          79 μs
+Binary Part (16 + 8)                 13.24 K       75.55 μs    ±12.16%          78 μs          94 μs
+Binary Part (64 + 16)                11.90 K       84.02 μs    ±92.90%         150 μs         160 μs
+Binary Part (8)                      11.68 K       85.60 μs    ±91.03%         150 μs         160 μs
+Binary Part (64 + 32)                11.49 K       87.02 μs     ±8.99%          93 μs          94 μs
+Charlist (16)                        11.36 K          88 μs    ±88.25%         150 μs         160 μs
+Binary Part (64 + 32 + 16 + 8)       11.10 K       90.11 μs    ±10.47%          94 μs         125 μs
+Charlist (32 + 16)                   10.90 K       91.76 μs     ±8.13%          94 μs         110 μs
+Charlist (16 + 8)                    10.87 K       92.04 μs    ±83.71%         150 μs         160 μs
+Charlist (32)                        10.63 K       94.04 μs     ±5.06%          94 μs         110 μs
+Charlist (8)                         10.57 K       94.64 μs     ±5.03%          94 μs         110 μs
+Simple                               10.57 K       94.64 μs     ±5.97%          94 μs         110 μs
+Charlist (32 + 16 + 8)               10.47 K       95.51 μs     ±5.31%          94 μs         110 μs
+Binary Part (64)                      9.24 K      108.25 μs    ±66.79%         150 μs         160 μs
+String Replace                        2.95 K      338.66 μs    ±17.20%         310 μs         470 μs
 
 Comparison:
-Binary Part (32 + 16)                14.11 K
-Binary Part (32)                     13.84 K - 1.02x slower
-Binary Part (16)                     13.59 K - 1.04x slower
-Binary Part (32 + 16 + 8)            13.19 K - 1.07x slower
-Binary Part (16 + 8)                 12.52 K - 1.13x slower
-Binary Part (64 + 16)                11.92 K - 1.18x slower
-Charlist (16)                        11.52 K - 1.22x slower
-Binary Part (64 + 32)                11.49 K - 1.23x slower
-Binary Part (64 + 32 + 16 + 8)       11.36 K - 1.24x slower
-Charlist (16 + 8)                    11.31 K - 1.25x slower
-Binary Part (8)                      11.11 K - 1.27x slower
-Charlist (32 + 16)                   11.03 K - 1.28x slower
-Charlist (32)                        10.89 K - 1.30x slower
-Simple                               10.70 K - 1.32x slower
-Charlist (8)                         10.60 K - 1.33x slower
-Charlist (32 + 16 + 8)               10.47 K - 1.35x slower
-Binary Part (64)                      9.29 K - 1.52x slower
-String Replace                        3.02 K - 4.67x slower
+Binary Part (36 + 12)                15.21 K
+Binary Part (30 + 10)                14.42 K - 1.05x slower
+Binary Part (36 + 12 + 4)            14.29 K - 1.06x slower
+Binary Part (32 + 16)                14.16 K - 1.07x slower
+Binary Part (42 + 14 + 5)            14.02 K - 1.08x slower
+Binary Part (32)                     13.91 K - 1.09x slower
+Binary Part (27 + 9 + 3)             13.67 K - 1.11x slower
+Binary Part (16)                     13.63 K - 1.12x slower
+Binary Part (32 + 16 + 8)            13.59 K - 1.12x slower
+Binary Part (16 + 8)                 13.24 K - 1.15x slower
+Binary Part (64 + 16)                11.90 K - 1.28x slower
+Binary Part (8)                      11.68 K - 1.30x slower
+Binary Part (64 + 32)                11.49 K - 1.32x slower
+Charlist (16)                        11.36 K - 1.34x slower
+Binary Part (64 + 32 + 16 + 8)       11.10 K - 1.37x slower
+Charlist (32 + 16)                   10.90 K - 1.40x slower
+Charlist (16 + 8)                    10.87 K - 1.40x slower
+Charlist (32)                        10.63 K - 1.43x slower
+Charlist (8)                         10.57 K - 1.44x slower
+Simple                               10.57 K - 1.44x slower
+Charlist (32 + 16 + 8)               10.47 K - 1.45x slower
+Binary Part (64)                      9.24 K - 1.65x slower
+String Replace                        2.95 K - 5.15x slower
 ```
 
 ### Interpretation
