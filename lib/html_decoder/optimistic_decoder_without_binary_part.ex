@@ -13,14 +13,16 @@ defmodule HtmlDecoder.OptimisticDecoderWithoutBinaryPart do
     end
   end
 
-  defmacro define_happy_path_to_iodata(kind, name, fallback, amount, opts \\ []) when kind in [:def, :defp] and is_atom(name) and is_atom(fallback) do
+  defmacro define_happy_path_to_iodata(kind, name, fallback, amount, opts \\ [])
+           when kind in [:def, :defp] and is_atom(name) and is_atom(fallback) do
     debug? = Keyword.get(opts, :debug?, false)
 
     vars = Macro.generate_arguments(amount, __MODULE__)
     pattern = none_is_ampersand(vars)
+
     bytes =
       quote do
-        << unquote_splicing(vars) >>
+        <<unquote_splicing(vars)>>
       end
 
     ast =
@@ -51,8 +53,8 @@ defmodule HtmlDecoder.OptimisticDecoderWithoutBinaryPart do
     if debug? do
       ast
       |> Macro.to_string()
-      |> Code.format_string!
-      |> IO.puts
+      |> Code.format_string!()
+      |> IO.puts()
     end
 
     ast

@@ -13,14 +13,16 @@ defmodule HtmlDecoder.OptimisticDecoderWithCharlist do
     end
   end
 
-  defmacro define_happy_path_to_iodata(kind, name, fallback, amount, opts \\ []) when kind in [:def, :defp] and is_atom(name) and is_atom(fallback) do
+  defmacro define_happy_path_to_iodata(kind, name, fallback, amount, opts \\ [])
+           when kind in [:def, :defp] and is_atom(name) and is_atom(fallback) do
     debug? = Keyword.get(opts, :debug?, false)
 
     vars = Macro.generate_arguments(amount, __MODULE__)
     pattern = none_is_ampersand(vars)
+
     bytes =
       quote do
-        << unquote_splicing(vars) >>
+        <<unquote_splicing(vars)>>
       end
 
     ast =
@@ -48,12 +50,11 @@ defmodule HtmlDecoder.OptimisticDecoderWithCharlist do
           end
       end
 
-
     if debug? do
       ast
       |> Macro.to_string()
-      |> Code.format_string!
-      |> IO.puts
+      |> Code.format_string!()
+      |> IO.puts()
     end
 
     ast
@@ -100,7 +101,7 @@ defmodule HtmlDecoder.OptimisticDecoderWithCharlist do
 
         unquote_splicing(clauses)
 
-        defp to_iodata1(<< c, rest :: binary >>) do
+        defp to_iodata1(<<c, rest::binary>>) do
           [c | to_iodata1(rest)]
         end
 
@@ -113,7 +114,7 @@ defmodule HtmlDecoder.OptimisticDecoderWithCharlist do
         def unescape_html_entities(html) do
           html
           |> unquote(first_happy_path)()
-          |> IO.iodata_to_binary
+          |> IO.iodata_to_binary()
         end
       end
     end

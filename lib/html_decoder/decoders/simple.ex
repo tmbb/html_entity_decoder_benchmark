@@ -7,7 +7,7 @@ defmodule HtmlDecoder.Decoders.Simple do
     end
   end
 
-  defp to_iodata(<< c, rest :: binary >>) do
+  defp to_iodata(<<c, rest::binary>>) do
     [c | to_iodata(rest)]
   end
 
@@ -18,6 +18,6 @@ defmodule HtmlDecoder.Decoders.Simple do
   def unescape_html_entities(html) do
     html
     |> to_iodata()
-    |> IO.iodata_to_binary
+    |> IO.iodata_to_binary()
   end
 end
